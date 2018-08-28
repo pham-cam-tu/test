@@ -24,3 +24,4 @@ while True:
 
     predected_answer = model.predict([x,y])
     print("{0}+{1}={2}".format(x,y,int(predected_answer[0][0])))
+    print("result is nothing")
