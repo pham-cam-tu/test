@@ -5,3 +5,4 @@ url = 'https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b69
 res = urllib.request.urlopen(url)
 content = json.loads(res.read().decode('utf8'))
 print(content)
+print("aaaa")
