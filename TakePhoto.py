@@ -1,8 +1,9 @@
 import cv2
 import numpy as np
+import camerOpencv2
  
  
-def takePhoto():
+def takePhoto(path):
     """顔を検出してマスクする"""
     cap = cv2.VideoCapture(0)
     ret, frame = cap.read()
@@ -17,11 +18,11 @@ def takePhoto():
             break
     # sが押された場合は保存する
         if key == ord('s'):
-            path = "image/photo.jpg"
             cv2.imwrite(path,frame)
 
     cap.release()
     cv2.destroyAllWindows()
  
 if __name__ == '__main__':
-    takePhoto()
+    takePhoto("image/photo.jpg") 
+    camerOpencv2.pic_face_mask("image/photo.jpg","image/result.png")
