@@ -5,7 +5,7 @@ import camerOpencv2
  
 def takePhoto(path):
     """顔を検出してマスクする"""
-    cap = cv2.VideoCapture(0)
+    cap = cvimwrite(0)
     ret, frame = cap.read()
 
     while(True):
