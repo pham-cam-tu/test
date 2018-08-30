@@ -34,9 +34,22 @@ y0 = w_0 + w_1*x0
 # Drawing the fitting line 
 plt.plot(X.T, y.T, 'ro')     # data 
 plt.plot(x0, y0)               # the fitting line
-plt.axis([120, 200, 40, 80])
+plt.axis([140, 190, 45, 75])
 plt.xlabel('Height (cm)')
 plt.ylabel('Weight (kg)')
-#plt.show()
+plt.show()
+
+
+#way 2
+
+from sklearn import datasets, linear_model
+
+# fit the model by Linear Regression
+regr = linear_model.LinearRegression(fit_intercept=False) # fit_intercept = False for calculating the bias
+regr.fit(Xbar, y)
+
+# Compare two results
+print( 'Solution found by scikit-learn  : ', regr.coef_ )
+print( 'Solution found by (5): ', w.T)
 
 
